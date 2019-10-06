@@ -10,30 +10,6 @@ var symbols = ['!', '@', '#', '$', '&', '^', '?'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var defaultPassword = ['Try again and select at least one of the options.'];
 
-
-/*function shuffle(array) {
-    var currentIndex = array.length;
-    var temporaryValue;
-    var randomIndex;
-    //console.log("Current Index: ",+currentIndex);
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      console.log("Current Index",+currentIndex);
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-  }; */
-
 function addChar(arr) {
   var temp = arr[Math.floor(Math.random() * arr.length)];
 
