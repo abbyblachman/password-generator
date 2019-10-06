@@ -1,4 +1,5 @@
 var pw = [];
+var instructions = alert('Follow the prompts to create your secure password.')
 var isSymbols = confirm('Do you want symbols in your password?'); 
 var isNumbers = confirm('Do you want numbers in your password?');
 var isLowerCase = confirm('Do you want lowercase letters in your password?');
