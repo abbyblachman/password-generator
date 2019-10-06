@@ -3,7 +3,7 @@ var isSymbols = confirm('Do you want symbols in your password?');
 var isNumbers = confirm('Do you want numbers in your password?');
 var isLowerCase = confirm('Do you want lowercase letters in your password?');
 var isUpperCase = confirm('Do you want uppercase letters in your password?');
-var pwLen = prompt('what is your pw length');
+var pwLen = prompt('How many characters do you want in your password?');
 var lettersUpperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var symbols = ['!', '@', '#', '$', '&', '^', '?'];
@@ -14,6 +14,22 @@ function addChar(arr) {
   var temp = arr[Math.floor(Math.random() * arr.length)];
 
   return temp;
+};
+
+function CopyToClipboard(containerid) {
+  if (document.selection) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(document.getElementById(containerid));
+    range.select().createTextRange();
+    document.execCommand("copy");
+
+  } else if (window.getSelection) {
+    var range = document.createRange();
+    range.selectNode(document.getElementById(containerid));
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    alert("Secure Password Copied")
+  }
 };
 
 function refreshPage() {
@@ -49,7 +65,7 @@ function createPassword() {
     FinalChar.push(addChar(lettersUpperCase));
   }
 
-  else 
+  if (isSymbols === false && isNumbers === false && isLowerCase === false && isUpperCase === false) 
   {
     FinalChar.push(addChar(defaultPassword));  
   }
