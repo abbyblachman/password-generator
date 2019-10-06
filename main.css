@@ -1,0 +1,32 @@
+
+.appbox {
+    margin: auto;
+    border: solid black 0.05rem; 
+    padding: 0.5rem;
+}
+
+.appinstructions {
+    font-size: 1rem;
+    text-align: left;
+}
+.apptitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pwbuttons {
+    margin: 0.5rem;
+}
+
+.pwstyle {
+    border: dashed gray 0.05rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+
+
+.spacing {
+    margin-top: 10rem;
+}
