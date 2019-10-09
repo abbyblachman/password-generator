@@ -11,23 +11,28 @@
 <body>
     <!--box to show password-->
     <div class="spacing">
-    <div class="container appbox">
+    <div class="container appbox col-md-12">
         <div class="row justify-content-center">
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="apptitle">Secure Password Generator</div>
-                <div class="appinstructions">Click below to generate and copy your secure password. </div>
+                <input type="checkbox" id="symbols"> I want symbols in my password.<br><br>
+                <input type="checkbox" id="numbers"> I want numbers in my password.<br><br>
+                <input type="checkbox" id="lowercaseLetters"> I want lowercase letters in my password.<br><br>
+                <input type="checkbox" id="uppercaseLetters"> I want uppercase letters in my password.<br><br>
+                <div class="appinstructions">How many characters do you want in your password? Must be between 8 and 128.</div>
+                <input type="text" id="pwInput" value=""><br><br>
+                <div class="row justify-content-center"><button id="genBtn" type ="button" class="btn btn-primary pwbuttons">Generate Password</button></div>
             </div>
             <div class="col-md-4"></div>
         <div class="row justify-content-center">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
+            
+            <div class="col-md-12">
                 <div class="pwstyle" id="pwBox">Your Secure Password</div>
                 </div>
-            <div class="col-md-4"></div>
+            
         <div class="row justify-content-center">
             <!--button to generate-->
-            <button type ="button" class="btn btn-primary pwbuttons" onclick="createPassword()">Generate Password</button>
             <!--button to copy to clipboard-->
             <button type="button" class="btn btn-danger pwbuttons" onclick="CopyToClipboard('pwBox')">Copy To Clipboard</button>
             <!--external js-->
@@ -35,6 +40,6 @@
         </div>
     </div>
     </div>
-    <script src="./app.js"></script>
+   <script src="./app.js"></script>
 </body>
 </html>

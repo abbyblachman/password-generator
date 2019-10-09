@@ -1,7 +1,6 @@
 
 .appbox {
     margin: auto;
-    border: solid black 0.05rem; 
     padding: 0.5rem;
 }
 
@@ -13,6 +12,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
+    margin: 0.625rem;
 }
 
 .pwbuttons {
@@ -21,8 +21,9 @@
 
 .pwstyle {
     border: dashed gray 0.05rem;
-    padding: 0.5rem;
+    padding: 0.8rem;
     margin: 1rem;
+    width: 100%;
 }
 
 
