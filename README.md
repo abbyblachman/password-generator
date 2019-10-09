@@ -14,4 +14,4 @@ This application demonstrates the following JavaScript concepts:
 - transforming arrays to strings 
 - updating html using JavaScript 
 
-For css, this application uses both Bootstrap and CSS written by me. 
+For CSS, this application uses both Bootstrap and CSS written by me. 

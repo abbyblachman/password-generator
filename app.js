@@ -4,18 +4,22 @@ var isSymbols = confirm('Do you want symbols in your password?');
 var isNumbers = confirm('Do you want numbers in your password?');
 var isLowerCase = confirm('Do you want lowercase letters in your password?');
 var isUpperCase = confirm('Do you want uppercase letters in your password?');
-var pwLen = prompt('How many characters do you want in your password? Must be 4 characters or longer.');
+var pwLen = prompt('How many characters do you want in your password? Must be between 8 and 128 characters');
 var lettersUpperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var symbols = ['!', '@', '#', '$', '&', '^', '?'];
 var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var defaultPassword = ['Try again and select at least one of the options.'];
 
+/* add characters to array*/
+
 function addChar(arr) {
   var temp = arr[Math.floor(Math.random() * arr.length)];
 
   return temp;
 };
+
+/* copy to clipboard*/
 
 function CopyToClipboard(containerid) {
   if (document.selection) {
@@ -33,14 +37,20 @@ function CopyToClipboard(containerid) {
   }
 };
 
+/*reload page*/
+
 function refreshPage() {
     document.location.reload(true);
 };
+
+/*create password*/
 
 function createPassword() {
 
   var possibleChar = [];
   var FinalChar = [];
+
+  /*if users want symbols*/
 
   if(isSymbols)
   {
@@ -48,17 +58,23 @@ function createPassword() {
     FinalChar.push(addChar(symbols));
   }
 
+  /*if users want numbers*/
+
   if(isNumbers)
   {
     possibleChar = possibleChar.concat(numbers);
     FinalChar.push(addChar(numbers));
   }
 
+  /*if users want lower case*/
+
   if(isLowerCase)
   {
     possibleChar = possibleChar.concat(letters);
     FinalChar.push(addChar(letters));
   }
+
+  /*if users want upper case*/
 
   if(isUpperCase)
   {
@@ -83,7 +99,7 @@ function createPassword() {
     pw[i] = FinalChar[i];
   }
 
-  // Transform the result into a string and pass into writePassword
+  // Transform the result into a string and pass in function 
   
   pwShuffle = pw.join("");
   pwBox.innerHTML = pwShuffle;
